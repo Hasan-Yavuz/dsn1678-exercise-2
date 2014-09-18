@@ -60,7 +60,7 @@ body {
 
   background-color: rgba(100, 255, 255, 0);
     
-  transition: background-color 200ms linear, font-weight 200ms bold;
+  transition: background-color 400ms linear, font-weight 200ms bold;
 }
 
 .chart__link,
@@ -94,6 +94,9 @@ body {
   top: 0;
 
   background-color: rgba(127, 219, 255, 0.6);
+    
+  -webkit-animation: slide-up 250ms ease-out;
+  animation: slide-up 3000ms ease-out;
 }
 
 .chart__count {
@@ -102,7 +105,7 @@ body {
   margin: 0 0 0 50%;
   padding: 0.5em;
   position: absolute;
-  top: -2em;
+  top: 0em;
   width: 4.6em;
   z-index: 1;
 
@@ -111,6 +114,12 @@ body {
   opacity: 0;
 
   text-align: center;
+  transition: all 250ms linear;
+}
+
+.chart__count:hover {
+    top: -4em;
+    opacity: 1;
 }
 
 .chart__count::after {
@@ -124,18 +133,45 @@ body {
 
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-top: 10px solid #000;
+  border-top: 10px solid #000;   
 }
 
-.chart__item:hover,
-.chart__item:focus,
-.chart__item:active {
-  background-color: #8a8d9e;
+.chart__item:hover
+.chart__label {
   color: #fff;
+}
+
+.chart__item:hover
+.chart__bar {
+  background-color: rgba(127, 219, 255, 1);
+  transition: background-color 200ms linear;
+}
+
+.chart__item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: background-color 200ms linear;
 }
 
 .chart__bar:hover,
 .chart__bar:focus,
 .chart__bar:active {
-    background-color: rgba(127, 219, 255, 0.9);
+    background-color: rgba(127, 219, 255, 1);
+    transition: background-color 200ms linear;
+}
+
+@-webkit-keyframes slide-up {
+    0% {
+      top: 10em;
+    }
+    100% {
+      top: 0;
+    }
+    
+ @keyframes slide-up {
+    0% {
+      top: 10em;
+    }
+    100% {
+      top: 0;
+    }
 }
