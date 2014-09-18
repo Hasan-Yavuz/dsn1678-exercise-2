@@ -58,7 +58,9 @@ body {
   position: relative;
   width: 7.3%;
 
-  background-color: rgba(204, 204, 204, 0);
+  background-color: rgba(100, 255, 255, 0);
+    
+  transition: background-color 200ms linear, font-weight 200ms bold;
 }
 
 .chart__link,
@@ -123,4 +125,17 @@ body {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-top: 10px solid #000;
+}
+
+.chart__item:hover,
+.chart__item:focus,
+.chart__item:active {
+  background-color: #8a8d9e;
+  color: #fff;
+}
+
+.chart__bar:hover,
+.chart__bar:focus,
+.chart__bar:active {
+    background-color: rgba(127, 219, 255, 0.9);
 }
